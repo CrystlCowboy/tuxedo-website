@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #061126;
+  --foreground: #fff8e7;
+  --stitch-ink: #030817;
+  --stitch-navy: #061126;
+  --stitch-blue: #004a80;
+  --stitch-gold: #d7a620;
+  --stitch-gold-soft: #f2d36b;
+  --stitch-cream: #fff8e7;
+  --stitch-muted: #556070;
+  --site-nav-height: 4.5rem;
+  --hero-nav-gap: 1rem;
 }
 
 @theme inline {
@@ -12,15 +21,206 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-padding-top: calc(var(--site-nav-height) + var(--hero-nav-gap) + 1rem);
+  scroll-behavior: smooth;
+}
+
+.site-header {
+  height: var(--site-nav-height);
+}
+
+.hero-frame {
+  top: calc(var(--site-nav-height) + var(--hero-nav-gap));
+  height: calc(100vh - var(--site-nav-height) - var(--hero-nav-gap));
+}
+
+.video-left-vignette {
+  background: linear-gradient(to right, rgba(6, 17, 38, 1) 0%, rgba(6, 17, 38, 0.52) 13%, transparent 28%);
+}
+
+.video-stage {
+  isolation: isolate;
+  background:
+    linear-gradient(100deg, rgba(4, 12, 29, 0.72) 0%, rgba(6, 17, 38, 0.96) 52%, rgba(255, 248, 231, 0.18) 100%);
+  box-shadow:
+    -42px 0 80px rgba(0, 0, 0, 0.58),
+    -10px 0 22px rgba(255, 255, 255, 0.04),
+    inset 1px 0 0 rgba(255, 255, 255, 0.1);
+  transform: translateZ(0);
+  transform-origin: right center;
+}
+
+.video-stage::before,
+.video-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.video-stage::before {
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.03) 12%, transparent 34%),
+    linear-gradient(270deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 11%, transparent 36%);
+}
+
+.video-stage::after {
+  z-index: 20;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, transparent 18%),
+    linear-gradient(90deg, transparent 88%, rgba(255, 255, 255, 0.2) 100%);
+  box-shadow:
+    inset 34px 0 58px rgba(0, 0, 0, 0.52),
+    inset -1px 0 0 rgba(255, 255, 255, 0.36);
+}
+
+@media (max-width: 767px) {
+  .video-left-vignette {
+    background: linear-gradient(to bottom, rgba(4, 8, 26, 1) 0%, transparent 24%);
+  }
+
+  .video-stage {
+    box-shadow:
+      0 -34px 72px rgba(0, 0, 0, 0.58),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .video-stage::before {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 13%, transparent 38%),
+      linear-gradient(270deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 10%, transparent 35%);
+  }
+
+  .video-stage::after {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, transparent 20%),
+      linear-gradient(90deg, transparent 88%, rgba(255, 255, 255, 0.16) 100%);
+    box-shadow:
+      inset 0 30px 54px rgba(0, 0, 0, 0.5),
+      inset -1px 0 0 rgba(255, 255, 255, 0.24);
+  }
+}
+
+@media (min-width: 768px) {
+  .video-stage {
+    box-shadow:
+      -56px 0 96px rgba(0, 0, 0, 0.64),
+      -14px 0 28px rgba(255, 255, 255, 0.05),
+      inset 1px 0 0 rgba(255, 255, 255, 0.12);
+    transform: perspective(1400px) rotateY(-2.25deg) translateX(2px);
+  }
+}
+
+.progress-fill {
+  width: calc(100% + 2px);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: none;
+  background: linear-gradient(90deg, var(--stitch-gold), var(--stitch-gold-soft));
+  will-change: transform;
+}
+
+.progress-fill[data-complete="true"] {
+  transform: scaleX(1);
+}
+
+.headline-parallax {
+  --headline-parallax-y: 0px;
+  --headline-parallax-scale: 1;
+  transform: translate3d(0, var(--headline-parallax-y), 0) scale(var(--headline-parallax-scale));
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.brand-heading {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0;
+}
+
+.brand-kicker {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.brand-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  border: 1px solid transparent;
+  padding: 0.8rem 1.1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.brand-button:hover {
+  transform: translateY(-1px);
+}
+
+.brand-button-primary {
+  border-color: var(--stitch-gold);
+  background: var(--stitch-gold);
+  color: var(--stitch-ink);
+}
+
+.brand-button-secondary {
+  border-color: rgba(255, 255, 255, 0.26);
+  color: white;
+}
+
+.brand-button-secondary:hover {
+  border-color: var(--stitch-gold);
+  color: var(--stitch-gold);
+}
+
+.brand-button-light {
+  border-color: rgba(255, 255, 255, 0.28);
+  color: white;
+}
+
+.brand-button-light:hover {
+  border-color: var(--stitch-gold);
+  color: var(--stitch-gold);
+}
+
+.brand-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.stitch-pattern {
+  background-image:
+    linear-gradient(rgba(0, 74, 128, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 74, 128, 0.035) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.thread-sweep {
+  background:
+    radial-gradient(circle at 18% 38%, rgba(215, 166, 32, 0.14), transparent 16%),
+    linear-gradient(132deg, transparent 0 42%, rgba(215, 166, 32, 0.28) 42.18%, transparent 42.36% 100%),
+    linear-gradient(150deg, transparent 0 54%, rgba(255, 248, 231, 0.12) 54.12%, transparent 54.28% 100%);
+  opacity: 0.78;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .headline-parallax {
+    transform: none;
+    will-change: auto;
   }
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(160deg, #020612 0%, var(--stitch-navy) 42%, #031c31 76%, #020612 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }

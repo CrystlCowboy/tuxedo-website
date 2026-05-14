@@ -1,0 +1,65 @@
+[
+  {
+    "id": "review-001",
+    "name": "Sarah M.",
+    "rating": 5,
+    "date": "2026-04-22",
+    "text": "They altered my wedding dress after another seamstress said the timeline was too tight. The fit was better than I expected, and they were calm and kind through the whole process."
+  },
+  {
+    "id": "review-002",
+    "name": "Derek P.",
+    "rating": 5,
+    "date": "2026-04-03",
+    "text": "I brought in jackets for our restaurant staff with a pretty small logo. The embroidery came out clean, and the colors matched our branding without me having to explain much."
+  },
+  {
+    "id": "review-003",
+    "name": "Megan R.",
+    "rating": 4,
+    "date": "2026-03-18",
+    "text": "My bridesmaid dress needed the straps shortened and the hem fixed before a Saturday wedding. They got it done on time and the dress finally felt comfortable."
+  },
+  {
+    "id": "review-004",
+    "name": "Jared K.",
+    "rating": 5,
+    "date": "2026-03-02",
+    "text": "The formalwear fitting was easy and quick. I do not usually enjoy getting measured, but they made it simple and the suit looked sharp for prom photos."
+  },
+  {
+    "id": "review-005",
+    "name": "Lauren B.",
+    "rating": 5,
+    "date": "2026-02-14",
+    "text": "I asked for a custom memory pillow made from one of my dad's shirts. The stitching was careful, and it felt like they understood why the little details mattered."
+  },
+  {
+    "id": "review-006",
+    "name": "Anthony S.",
+    "rating": 4,
+    "date": "2026-01-27",
+    "text": "They fixed a torn coat lining and replaced a zipper that had been annoying me for months. It took a few days longer than I hoped, but the repair was solid."
+  },
+  {
+    "id": "review-007",
+    "name": "Heather L.",
+    "rating": 5,
+    "date": "2026-01-09",
+    "text": "The owner has a great eye. She pinned my dress in a way that made it look tailored instead of just smaller, and that made a huge difference."
+  },
+  {
+    "id": "review-008",
+    "name": "Brian C.",
+    "rating": 5,
+    "date": "2025-12-16",
+    "text": "We used The Stitchery for embroidered hats for a school fundraiser. The turnaround was reasonable, the thread work was tidy, and pickup was easy."
+  },
+  {
+    "id": "review-009",
+    "name": "Emily W.",
+    "rating": 5,
+    "date": "2025-11-29",
+    "text": "I had several pairs of pants hemmed and a blouse taken in. Everything looked natural when I picked it up, like the clothes had always fit that way."
+  }
+]

@@ -100,16 +100,51 @@ html {
 }
 
 @media (max-width: 767px) {
+  :root {
+    --site-nav-height: 5.25rem;
+    --hero-nav-gap: 0rem;
+  }
+
+  @supports (height: 100dvh) {
+    .hero-frame {
+      height: calc(100dvh - var(--site-nav-height) - var(--hero-nav-gap));
+    }
+  }
+
+  .hero-copy-panel {
+    display: none;
+  }
+
+  .thread-sweep,
+  .hero-diagonal-accent {
+    display: none;
+  }
+
   .video-stage {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    margin-inline: 0;
+    border: 0;
+    border-radius: 0;
     box-shadow: none;
+    overflow: hidden;
+    background: var(--hero-studio-white);
   }
 
   .hero-subject-media {
-    width: 170%;
-    height: auto;
+    left: 73%;
+    top: 88%;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    max-width: none;
+    height: 78%;
     object-fit: contain;
     object-position: center center;
-    transform: translate3d(0%, calc(-5% + var(--hero-subject-drift)), 0) scale(var(--hero-subject-scale));
+    transform: translate3d(-18%, calc(-50% + var(--hero-subject-drift)), 0) scale(var(--hero-subject-scale));
   }
 }
 
@@ -143,16 +178,8 @@ html {
 
   .hero-diagonal-accent {
     z-index: 35;
-    clip-path: polygon(0 0, 43% 0, 29.24% 100%, 0 100%);
-    background: transparent;
-  }
-
-  .hero-diagonal-accent::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(215, 166, 32, 0.52);
     clip-path: polygon(calc(100% - 1px) 0, 100% 0, 68% 100%, calc(68% - 1px) 100%);
+    background: rgba(215, 166, 32, 0.6);
     transform: scaleX(0.43);
     transform-origin: left center;
   }
@@ -170,7 +197,6 @@ html {
   .thread-sweep {
     inset: -1px 0 -1px -1px;
     z-index: 40;
-    clip-path: polygon(0 0, 43% 0, 29.24% 100%, 0 100%);
   }
 
   .video-stage {
@@ -217,16 +243,8 @@ html {
   }
 
   .hero-diagonal-accent {
-    clip-path: polygon(0 0, 42% 0, 30.24% 100%, 0 100%);
-  }
-
-  .hero-diagonal-accent::before {
     clip-path: polygon(calc(100% - 1px) 0, 100% 0, 72% 100%, calc(72% - 1px) 100%);
     transform: scaleX(0.42);
-  }
-
-  .thread-sweep {
-    clip-path: polygon(0 0, 42% 0, 30.24% 100%, 0 100%);
   }
 
   .hero-copy-content {
@@ -251,16 +269,8 @@ html {
   }
 
   .hero-diagonal-accent {
-    clip-path: polygon(0 0, 40% 0, 28% 100%, 0 100%);
-  }
-
-  .hero-diagonal-accent::before {
     clip-path: polygon(calc(100% - 1px) 0, 100% 0, 70% 100%, calc(70% - 1px) 100%);
     transform: scaleX(0.4);
-  }
-
-  .thread-sweep {
-    clip-path: polygon(0 0, 40% 0, 28% 100%, 0 100%);
   }
 
   .hero-copy-content {
@@ -280,16 +290,8 @@ html {
   }
 
   .hero-diagonal-accent {
-    clip-path: polygon(0 0, 39% 0, 26.52% 100%, 0 100%);
-  }
-
-  .hero-diagonal-accent::before {
     clip-path: polygon(calc(100% - 1px) 0, 100% 0, 68% 100%, calc(68% - 1px) 100%);
     transform: scaleX(0.39);
-  }
-
-  .thread-sweep {
-    clip-path: polygon(0 0, 39% 0, 26.52% 100%, 0 100%);
   }
 
   .hero-copy-content {
@@ -430,10 +432,10 @@ html {
 
 .thread-sweep {
   background:
-    radial-gradient(circle at 18% 38%, rgba(215, 166, 32, 0.1), transparent 16%),
-    linear-gradient(132deg, transparent 0 42%, rgba(215, 166, 32, 0.2) 42.18%, transparent 42.36% 100%),
-    linear-gradient(150deg, transparent 0 54%, rgba(255, 248, 231, 0.08) 54.12%, transparent 54.28% 100%);
-  opacity: 0.42;
+    radial-gradient(circle at 18% 38%, rgba(215, 166, 32, 0.14), transparent 16%),
+    linear-gradient(132deg, transparent 0 42%, rgba(215, 166, 32, 0.28) 42.18%, transparent 42.36% 100%),
+    linear-gradient(150deg, transparent 0 54%, rgba(255, 248, 231, 0.12) 54.12%, transparent 54.28% 100%);
+  opacity: 0.78;
   transform: translate3d(0, var(--hero-thread-drift), 0);
 }
 

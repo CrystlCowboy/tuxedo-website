@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 
 const mobileLinks = [
+  { label: 'Book appointment', href: '/book', featured: true },
   { label: 'Home', href: '#top' },
   { label: 'Services', href: '#services' },
   { label: 'Appointments', href: '#appointments' },
@@ -63,13 +64,18 @@ export default function MobileNav() {
         <nav aria-label="Mobile navigation" className="flex flex-col gap-6">
           {mobileLinks.map((link) => (
             <a
-              className="brand-heading text-2xl text-white transition hover:text-[var(--stitch-gold)] active:text-[var(--stitch-gold)] focus-visible:text-[var(--stitch-gold)] focus-visible:outline-none"
+              className={
+                link.featured
+                  ? 'brand-heading flex min-h-14 items-center justify-between border border-[var(--stitch-gold)] bg-[var(--stitch-gold)] px-4 py-3 text-xl text-[var(--stitch-ink)] shadow-2xl shadow-black/25 transition hover:bg-[var(--stitch-gold-soft)] active:bg-[var(--stitch-gold-soft)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--stitch-gold)]'
+                  : 'brand-heading text-2xl text-white transition hover:text-[var(--stitch-gold)] active:text-[var(--stitch-gold)] focus-visible:text-[var(--stitch-gold)] focus-visible:outline-none'
+              }
               href={link.href}
               key={link.href}
               onClick={() => setIsOpen(false)}
               tabIndex={isOpen ? 0 : -1}
             >
               {link.label}
+              {link.featured && <span className="text-sm" aria-hidden="true">-&gt;</span>}
             </a>
           ))}
         </nav>

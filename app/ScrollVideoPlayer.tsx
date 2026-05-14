@@ -307,13 +307,7 @@ export default function ScrollVideoPlayer() {
   return (
     <div ref={containerRef} className="video-scroll-shell h-[400vh] md:h-[700vh]">
       {/* Sticky frame releases naturally when the container is scrolled past */}
-      <div
-        className="hero-frame sticky flex flex-col overflow-hidden md:flex-row"
-        style={{
-          top: 'calc(var(--site-nav-height) + var(--hero-nav-gap))',
-          height: 'calc(100vh - var(--site-nav-height) - var(--hero-nav-gap))',
-        }}
-      >
+      <div className="hero-frame sticky flex flex-col overflow-hidden md:flex-row">
         <div className="hero-diagonal-panel pointer-events-none absolute inset-0 hidden md:block" aria-hidden="true" />
         <div className="hero-diagonal-accent pointer-events-none absolute inset-0 hidden md:block" aria-hidden="true" />
         <div className="thread-sweep pointer-events-none absolute inset-0 z-[1]" />
@@ -357,10 +351,10 @@ export default function ScrollVideoPlayer() {
         </div>
 
         {/* Studio backdrop and raw video subject */}
-        <div className="video-stage relative mx-4 h-[72svh] max-h-[calc(100svh-var(--site-nav-height)-var(--hero-nav-gap)-7.5rem)] w-[calc(100%-2rem)] flex-none overflow-hidden md:mx-0 md:h-auto md:max-h-none md:min-h-0 md:w-auto md:flex-1">
+        <div className="video-stage relative m-0 min-h-0 w-full flex-1 overflow-hidden md:mx-0 md:h-auto md:max-h-none md:min-h-0 md:w-auto md:flex-1">
           <video
             ref={videoRef}
-            className="hero-subject-media hero-video-element absolute left-1/2 top-1/2 z-10 h-full w-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-contain object-center md:inset-y-0 md:left-auto md:right-0 md:top-auto md:h-full md:w-full md:translate-x-0 md:translate-y-0 md:object-right"
+            className="hero-subject-media hero-video-element absolute left-1/2 top-1/2 z-10 h-full w-full max-w-none -translate-x-1/2 -translate-y-1/2 object-contain object-center md:inset-y-0 md:left-auto md:right-0 md:top-auto md:h-full md:w-full md:translate-x-0 md:translate-y-0 md:object-right"
             src="/Clean%20360%20Tuxedo%20Animation.mp4"
             muted
             playsInline
@@ -369,7 +363,7 @@ export default function ScrollVideoPlayer() {
           <canvas
             ref={frozenFrameRef}
             aria-hidden="true"
-            className="hero-subject-media pointer-events-none absolute left-1/2 top-1/2 z-[15] h-full w-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-contain object-center opacity-0 md:inset-y-0 md:left-auto md:right-0 md:top-auto md:h-full md:w-full md:translate-x-0 md:translate-y-0 md:object-right"
+            className="hero-subject-media pointer-events-none absolute left-1/2 top-1/2 z-[15] h-full w-full max-w-none -translate-x-1/2 -translate-y-1/2 object-contain object-center opacity-0 md:inset-y-0 md:left-auto md:right-0 md:top-auto md:h-full md:w-full md:translate-x-0 md:translate-y-0 md:object-right"
           />
 
         </div>

@@ -51,9 +51,21 @@ export default function Home() {
             <span className="grid h-9 w-9 place-items-center border border-[var(--stitch-gold)] text-sm font-semibold text-[var(--stitch-gold)]">
               TS
             </span>
-            <span className="brand-heading text-2xl text-white">The Stitchery</span>
+            <span className="flex flex-col">
+              <span className="brand-heading text-2xl leading-none text-white">The Stitchery</span>
+              <span className="mt-1 hidden text-[8px] font-semibold uppercase tracking-[0.24em] text-[var(--stitch-gold)] max-md:block">
+                Batesville & Brookville
+              </span>
+            </span>
           </a>
-          <div className="hidden items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/66 md:flex">
+          <div className="hidden items-center gap-5 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/66 md:flex">
+            <a
+              className="border border-[var(--stitch-gold)] bg-[var(--stitch-gold)] px-3 py-2 tracking-[0.18em] text-[var(--stitch-ink)] shadow-lg shadow-black/20 transition hover:bg-[var(--stitch-gold-soft)]"
+              href="/book"
+            >
+              <span className="hidden lg:inline">Book appointment</span>
+              <span className="lg:hidden">Book</span>
+            </a>
             <a className="transition hover:text-[var(--stitch-gold)]" href="#services">Services</a>
             <a className="transition hover:text-[var(--stitch-gold)]" href="#appointments">Appointments</a>
             <a className="transition hover:text-[var(--stitch-gold)]" href="#locations">Locations</a>
@@ -65,6 +77,34 @@ export default function Home() {
 
       <div id="top" />
       <ScrollVideoPlayer />
+
+      <section id="appointments" className="brand-section bg-[var(--stitch-navy)] px-5 py-16 text-white sm:px-8 sm:py-20 lg:py-32">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.82fr] lg:items-center">
+          <div>
+            <p className="brand-kicker text-[var(--stitch-gold)]">Appointments</p>
+            <h2 className="brand-heading mt-4 max-w-3xl text-3xl leading-[1.05] sm:text-5xl sm:leading-none lg:text-6xl">
+              Bridal, formalwear, and custom fittings by appointment.
+            </h2>
+            <p className="mt-6 max-w-2xl text-base font-light leading-8 text-white/66 sm:mt-8 sm:text-lg">
+              Choose the fitting or consultation that fits your project, then connect with the studio that is closest to you.
+            </p>
+          </div>
+          <div className="border border-white/12 bg-white/[0.04] p-5 shadow-2xl shadow-black/30 sm:p-8">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              {['Bridal fitting', 'Formalwear fitting', 'Embroidery consult', 'Custom sewing request'].map((item) => (
+                <a
+                  className="group flex min-h-11 items-center justify-between border border-white/10 bg-white/[0.04] px-4 py-4 text-sm uppercase tracking-[0.14em] text-white/75 transition hover:border-[var(--stitch-gold)] hover:text-white sm:px-5 sm:tracking-[0.18em]"
+                  href="/book"
+                  key={item}
+                >
+                  {item}
+                  <span className="text-[var(--stitch-gold)] transition group-hover:translate-x-1">-&gt;</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="services" className="brand-section stitch-pattern bg-[var(--stitch-cream)] px-5 py-16 text-[var(--stitch-navy)] sm:px-8 sm:py-20 lg:py-32">
         <div className="mx-auto max-w-7xl">
@@ -100,34 +140,6 @@ export default function Home() {
           </h2>
         </div>
         <ReviewsMarquee />
-      </section>
-
-      <section id="appointments" className="brand-section bg-[var(--stitch-navy)] px-5 py-16 text-white sm:px-8 sm:py-20 lg:py-32">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.82fr] lg:items-center">
-          <div>
-            <p className="brand-kicker text-[var(--stitch-gold)]">Appointments</p>
-            <h2 className="brand-heading mt-4 max-w-3xl text-3xl leading-[1.05] sm:text-5xl sm:leading-none lg:text-6xl">
-              Bridal, formalwear, and custom fittings by appointment.
-            </h2>
-            <p className="mt-6 max-w-2xl text-base font-light leading-8 text-white/66 sm:mt-8 sm:text-lg">
-              Choose the fitting or consultation that fits your project, then connect with the studio that is closest to you.
-            </p>
-          </div>
-          <div className="border border-white/12 bg-white/[0.04] p-5 shadow-2xl shadow-black/30 sm:p-8">
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              {['Bridal fitting', 'Formalwear fitting', 'Embroidery consult', 'Custom sewing request'].map((item) => (
-                <a
-                  className="group flex min-h-11 items-center justify-between border border-white/10 bg-white/[0.04] px-4 py-4 text-sm uppercase tracking-[0.14em] text-white/75 transition hover:border-[var(--stitch-gold)] hover:text-white sm:px-5 sm:tracking-[0.18em]"
-                  href="/book"
-                  key={item}
-                >
-                  {item}
-                  <span className="text-[var(--stitch-gold)] transition group-hover:translate-x-1">-&gt;</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
       </section>
 
       <section id="locations" className="brand-section bg-white px-5 py-16 text-[var(--stitch-navy)] sm:px-8 sm:py-20 lg:py-32">

@@ -18,24 +18,24 @@ const services = [
   },
   {
     title: 'Formalwear Fittings',
-    description: 'Wedding, prom, and event fittings with Timeline Tux rental support by appointment.',
+    description: 'Wedding, prom, and event fittings with Anytime Tuxedos rental support by appointment.',
   },
 ];
 
 const locations = [
   {
     city: 'Batesville',
-    address: '117 South Main St. Suite A',
-    phone: '812 363 6878',
-    mapTitle: 'Map to The Stitchery Batesville',
-    mapSrc: 'https://www.google.com/maps?q=117%20South%20Main%20St%20Suite%20A%2C%20Batesville%2C%20IN%2047006&output=embed',
+    address: '301 Shopping Village, Batesville, IN 47006',
+    phone: '812-555-5555',
+    mapTitle: 'Map to Tuxedo Shop Batesville',
+    mapSrc: 'https://www.google.com/maps?q=301%20Shopping%20Village%2C%20Batesville%2C%20IN%2047006&output=embed',
   },
   {
-    city: 'Brookville',
-    address: '700 Main Street Unit A',
-    phone: '812 312 0334',
-    mapTitle: 'Map to The Stitchery Brookville',
-    mapSrc: 'https://www.google.com/maps?q=700%20Main%20Street%20Unit%20A%2C%20Brookville%2C%20IN%2047012&output=embed',
+    city: 'Versailles',
+    address: '220 E US-50, Versailles, IN 47042',
+    phone: '812-555-5555',
+    mapTitle: 'Map to Tuxedo Shop Versailles',
+    mapSrc: 'https://www.google.com/maps?q=220%20E%20US-50%2C%20Versailles%2C%20IN%2047042&output=embed',
   },
 ];
 
@@ -47,14 +47,14 @@ export default function Home() {
         style={{ height: 'var(--site-nav-height)' }}
       >
         <nav className="mx-auto flex h-full max-w-7xl items-center justify-between px-6 text-white sm:px-8">
-          <a className="flex items-center gap-3" href="#top" aria-label="The Stitchery home">
+          <a className="flex items-center gap-3" href="#top" aria-label="Tuxedo Shop home">
             <span className="grid h-9 w-9 place-items-center border border-[var(--stitch-gold)] text-sm font-semibold text-[var(--stitch-gold)]">
               TS
             </span>
             <span className="flex flex-col">
-              <span className="brand-heading text-2xl leading-none text-white">The Stitchery</span>
+              <span className="brand-heading text-2xl leading-none text-white">Tuxedo Shop</span>
               <span className="mt-1 hidden text-[8px] font-semibold uppercase tracking-[0.24em] text-[var(--stitch-gold)] max-md:block">
-                Batesville & Brookville
+                Batesville & Versailles
               </span>
             </span>
           </a>
@@ -66,8 +66,8 @@ export default function Home() {
               <span className="hidden lg:inline">Book appointment</span>
               <span className="lg:hidden">Book</span>
             </a>
-            <a className="transition hover:text-[var(--stitch-gold)]" href="#services">Services</a>
             <a className="transition hover:text-[var(--stitch-gold)]" href="#appointments">Appointments</a>
+            <a className="transition hover:text-[var(--stitch-gold)]" href="#services">Services</a>
             <a className="transition hover:text-[var(--stitch-gold)]" href="#locations">Locations</a>
             <a className="transition hover:text-[var(--stitch-gold)]" href="#classes">Classes</a>
           </div>
@@ -156,7 +156,7 @@ export default function Home() {
                 <p className="mt-5 leading-7 text-[var(--stitch-muted)]">{location.address}</p>
                 <a
                   className="mt-4 inline-flex min-h-11 items-center font-semibold text-[var(--stitch-navy)] transition hover:text-[var(--stitch-blue)]"
-                  href={`tel:+1${location.phone.replace(/\D/g, '')}`}
+                  href={`tel:${location.phone.replace(/\D/g, '')}`}
                 >
                   {location.phone}
                 </a>
@@ -199,7 +199,7 @@ export default function Home() {
 
       <footer id="contact" className="bg-[var(--stitch-ink)] px-5 py-10 text-white/58 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-base sm:flex-row sm:items-center sm:justify-between sm:text-sm">
-          <p className="brand-heading text-2xl text-white">The Stitchery</p>
+          <p className="brand-heading text-2xl text-white">Tuxedo Shop</p>
           <p>Alterations, embroidery, custom sewing, and formalwear fittings.</p>
         </div>
       </footer>

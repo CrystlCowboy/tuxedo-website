@@ -8,6 +8,7 @@ export default function ScrollVideoPlayer() {
   const containerRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
+  const scrollPromptRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -271,6 +272,11 @@ export default function ScrollVideoPlayer() {
         headlineRef.current.style.setProperty('--headline-parallax-y', `${-easedProgress * parallaxDistance}px`);
         headlineRef.current.style.setProperty('--headline-parallax-scale', `${1 + easedProgress * parallaxScale}`);
       }
+
+      if (isMobileHero && scrollPromptRef.current) {
+        const promptOpacity = progress <= 0.8 ? 1 : Math.max(0, (1 - progress) / 0.2);
+        scrollPromptRef.current.style.opacity = promptOpacity.toFixed(3);
+      }
     };
 
     const tick = () => {
@@ -311,21 +317,27 @@ export default function ScrollVideoPlayer() {
         <div className="hero-diagonal-panel pointer-events-none absolute inset-0 hidden md:block" aria-hidden="true" />
         <div className="hero-diagonal-accent pointer-events-none absolute inset-0 hidden md:block" aria-hidden="true" />
         <div className="thread-sweep pointer-events-none absolute inset-0 z-[1]" />
+        <div ref={scrollPromptRef} className="mobile-scroll-prompt md:hidden" aria-hidden="true">
+          <span>Scroll</span>
+          <svg width="30" height="30" viewBox="0 0 20 20" fill="none">
+            <path d="M5 8l5 5 5-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
 
         {/* Left panel: headline on the diagonal navy overlay */}
         <div className="hero-copy-panel z-10 flex w-full shrink-0 select-none flex-col px-6 pb-3 pt-5 sm:px-8 md:h-auto md:w-[45%] md:justify-center md:px-16 md:py-0">
           <div className="hero-copy-content">
             <span className="mb-3 text-[9px] font-semibold uppercase tracking-[0.34em] text-[var(--stitch-gold)] md:mb-6 md:text-[11px] md:tracking-[0.45em]">
-              Batesville & Brookville
+              Batesville & Versailles
             </span>
 
             <h1
               ref={headlineRef}
               className="headline-parallax brand-heading text-[2.35rem] font-normal leading-[0.92] text-white sm:text-5xl md:text-[56px] md:leading-[0.95] lg:text-[68px] xl:text-[78px]"
             >
-              The
+              Tuxedo
               <br />
-              <span className="text-[var(--stitch-gold)]">Stitchery</span>
+              <span className="text-[var(--stitch-gold)]">Shop</span>
             </h1>
 
             <p className="mt-7 hidden max-w-[28rem] text-base font-light leading-relaxed text-white/68 md:block">
@@ -370,7 +382,7 @@ export default function ScrollVideoPlayer() {
 
         <div className="hero-timeline-card absolute bottom-8 right-8 z-[60] hidden max-w-[15rem] border border-[color:rgba(215,166,32,0.28)] bg-[rgba(6,17,38,0.78)] p-5 text-white shadow-2xl xl:block">
           <p className="text-[10px] font-semibold uppercase tracking-[0.32em] text-[var(--stitch-gold)]">
-            Timeline Tux
+            Anytime Tuxedos
           </p>
           <p className="mt-3 text-sm font-light leading-relaxed text-white/72">
             Suit and tux rental support for weddings, proms, and special events.

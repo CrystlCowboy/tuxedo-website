@@ -5,9 +5,9 @@ import Link from 'next/link';
 
 const services = [
   { name: 'Bridal Fitting', duration: '60 min', location: 'Batesville' },
-  { name: 'Formalwear Fitting', duration: '45 min', location: 'Both locations' },
-  { name: 'Embroidery Consultation', duration: '30 min', location: 'Both' },
-  { name: 'Custom Sewing Request', duration: '45 min', location: 'Both' },
+  { name: 'Formalwear Fitting', duration: '45 min', location: 'Batesville or Versailles' },
+  { name: 'Embroidery Consultation', duration: '30 min', location: 'Batesville or Versailles' },
+  { name: 'Custom Sewing Request', duration: '45 min', location: 'Batesville or Versailles' },
 ];
 
 const calendarCells = [

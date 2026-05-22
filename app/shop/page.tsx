@@ -22,7 +22,7 @@ export default function ShopPage() {
         </div>
 
         <section className="py-12 sm:py-16">
-          <p className="brand-kicker text-[var(--stitch-gold)]">The Stitchery</p>
+          <p className="brand-kicker text-[var(--stitch-gold)]">Tuxedo Shop</p>
           <h1 className="brand-heading mt-4 text-4xl leading-none sm:text-6xl lg:text-7xl">Shop</h1>
           <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
             Handcrafted goods and custom embroidery, available soon

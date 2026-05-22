@@ -13,8 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The Stitchery | Alterations, Embroidery & Formalwear",
-  description: "A polished demo website for The Stitchery, featuring alterations, embroidery, custom sewing, and formalwear fittings.",
+  title: "Tuxedo Shop | Alterations, Embroidery & Formalwear",
+  description: "A polished demo website for Tuxedo Shop, featuring alterations, embroidery, custom sewing, and formalwear fittings.",
+  openGraph: {
+    title: "Tuxedo Shop | Alterations, Embroidery & Formalwear",
+    description: "A polished demo website for Tuxedo Shop, featuring alterations, embroidery, custom sewing, and formalwear fittings.",
+    siteName: "Tuxedo Shop",
+  },
 };
 
 export default function RootLayout({

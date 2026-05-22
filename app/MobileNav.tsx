@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 const mobileLinks = [
   { label: 'Book appointment', href: '/book', featured: true },
   { label: 'Home', href: '#top' },
-  { label: 'Services', href: '#services' },
   { label: 'Appointments', href: '#appointments' },
+  { label: 'Services', href: '#services' },
   { label: 'Locations', href: '#locations' },
   { label: 'Events', href: '#classes' },
   { label: 'Contact', href: '#contact' },

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import InstagramGrid from './InstagramGrid';
 import MobileNav from './MobileNav';
 import ReviewsMarquee from './ReviewsMarquee';
@@ -199,8 +201,27 @@ export default function Home() {
 
       <footer id="contact" className="bg-[var(--stitch-ink)] px-5 py-10 text-white/58 sm:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 text-base sm:flex-row sm:items-center sm:justify-between sm:text-sm">
-          <p className="brand-heading text-2xl text-white">Tuxedo Shop</p>
-          <p>Alterations, embroidery, custom sewing, and formalwear fittings.</p>
+          <div className="inline-flex items-center gap-3 text-white">
+            <Image
+              src="/instagram/post1.png"
+              alt="Justin Tech Solutions logo"
+              width={40}
+              height={40}
+              className="h-9 w-auto shrink-0 sm:h-10"
+            />
+            <p className="brand-heading text-xl leading-tight sm:text-2xl">
+              Website made by{' '}
+              <a
+                className="text-inherit no-underline transition hover:text-[var(--stitch-gold)]"
+                href="https://justintechsolutions.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Justin Tech Solutions
+              </a>
+            </p>
+          </div>
+          <p>Website Design, AI Chatbots, and Custom Software offered. Thanks for checking out this demo!</p>
         </div>
       </footer>
     </main>

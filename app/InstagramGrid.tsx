@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
 const posts = [
-  { src: '/instagram/post1.jpg', alt: 'Recent tuxedo project 1' },
-  { src: '/instagram/post2.jpg', alt: 'Recent tuxedo project 2' },
-  { src: '/instagram/post3.jpg', alt: 'Recent tuxedo project 3' },
-  { src: '/instagram/post4.jpg', alt: 'Recent tuxedo project 4' },
-  { src: '/instagram/post5.jpg', alt: 'Recent tuxedo project 5' },
-  { src: '/instagram/post6.jpg', alt: 'Recent tuxedo project 6' },
+  { src: '/instagram/post1.png', alt: 'Recent tuxedo project 1' },
+  { src: '/instagram/post2.png', alt: 'Recent tuxedo project 2' },
+  { src: '/instagram/post3.png', alt: 'Recent tuxedo project 3' },
+  { src: '/instagram/post4.png', alt: 'Recent tuxedo project 4' },
+  { src: '/instagram/post5.png', alt: 'Recent tuxedo project 5' },
+  { src: '/instagram/post6.png', alt: 'Recent tuxedo project 6' },
 ];
 
 const instagramUrl = 'https://www.instagram.com/justintechsolutionsindiana/';

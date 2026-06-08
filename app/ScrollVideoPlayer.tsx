@@ -267,7 +267,7 @@ export default function ScrollVideoPlayer() {
       }
 
       if (headlineRef.current) {
-        const parallaxDistance = isMobileHero ? 14 : 28;
+        const parallaxDistance = 0;
         const parallaxScale = isMobileHero ? 0.006 : 0.012;
         headlineRef.current.style.setProperty('--headline-parallax-y', `${-easedProgress * parallaxDistance}px`);
         headlineRef.current.style.setProperty('--headline-parallax-scale', `${1 + easedProgress * parallaxScale}`);
